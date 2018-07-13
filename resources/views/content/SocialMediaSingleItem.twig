@@ -29,10 +29,10 @@
       data-media-url='{{ socialMediaUrl }}'
     {% endif %}
     data-theme='{{ socialTheme }}'
-    data-media-url="{{ data.images.all[0].url }}"
+    data-media-url="{{ item.documents[0].data.images.all[0].url }}"
     >
 
 </div>
 <div class="debug">
-  {{ data | json_encode }}
+  {{ item | json_encode }}
 </div>
