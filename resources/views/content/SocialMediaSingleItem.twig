@@ -9,6 +9,7 @@
 {% set socialMediaUrl = config("SocialMedia.social.single.mediaUrl") %}
 {% set socialTheme = config("SocialMedia.social.single.theme") %}
 {% set socialFixed = config("SocialMedia.social.single.fixed") %}
+{% set pinterestImage =  item.documents[0].data.images.all[0].url %}
 
 <div class="shariff socialbar singleItem"
 
@@ -29,10 +30,7 @@
       data-media-url='{{ socialMediaUrl }}'
     {% endif %}
     data-theme='{{ socialTheme }}'
-    data-media-url="{{ item.documents[0].data.images.all[0].url }}"
+    {% if pinterestImage %}data-media-url="{{ pinterestImage }}"{% endif %}
     >
 
-</div>
-<div class="debug">
-  {{ item | json_encode }}
 </div>
