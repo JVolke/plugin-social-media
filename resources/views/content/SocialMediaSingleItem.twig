@@ -8,8 +8,10 @@
 {% set socialMediaUrl = config("SocialMedia.social.single.mediaUrl") %}
 {% set socialTheme = config("SocialMedia.social.single.theme") %}
 {% set socialFixed = config("SocialMedia.social.single.fixed") %}
+{% set pinterestImage = "" %}
 {% if  item.documents[0].data.images.all %}
   {% for image in item.documents[0].data.images.all %}
+  <div class="debug">{{ image | json_encode }}</div>
     {% if image.position == 0 %}
       {% set pinterestImage = image.url %}
     {% endif %}
