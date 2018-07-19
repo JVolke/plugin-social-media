@@ -10,7 +10,6 @@
 {% set socialFixed = config("SocialMedia.social.single.fixed") %}
 {% if  item.documents[0].data.images.all %}
   {% for image in item.documents[0].data.images.all %}
-   <div class="debug2">{{ image | json_encode }}</div>
     {% if image.position == 0 %}
       {% set pinterestImage = image.url %}
     {% endif %}
@@ -37,4 +36,3 @@
     {% if pinterestImage %}data-media-url="{{ pinterestImage }}"{% endif %}
     >
 </div>
-<div class="debug">{{pinterestImage}}</div>

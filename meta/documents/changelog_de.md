@@ -1,5 +1,10 @@
 # Release Notes für SocialMedia
 
+## (2018-07-19)
+
+### Hinzugefügt
+- data-media-url für Pinterest für die SingleItem Ansicht.
+
 ## v1.1.0 (2018-03-09)
 
 ### Hinzugefügt
