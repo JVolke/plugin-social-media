@@ -8,12 +8,19 @@
 {% set socialMediaUrl = config("SocialMedia.social.single.mediaUrl") %}
 {% set socialTheme = config("SocialMedia.social.single.theme") %}
 {% set socialFixed = config("SocialMedia.social.single.fixed") %}
-{% if  item.documents[0].data.images.all %}
-  {% for image in item.documents[0].data.images.all %}
-    {% if image.position == 0 %}
-      {% set pinterestImage = image.url %}
-    {% endif %}
-  {% endfor %}
+{% if  item.documents[0].data.images %}
+  {% if item.documents[0].data.image.variation %}
+    {% for image in item.documents[0].data.images.variation %}
+      {% if image.position == 0 %}
+        {% set pinterestImage = image.url %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% for image in item.documents[0].data.images.all %}
+      {% if image.position == 0 %}
+        {% set pinterestImage = image.url %}
+      {% endif %}
+    {% endfor %}
 {% endif %}
 {% set pinterestImage =  item.documents[0].data.images.all[0].url %}
 <div class="shariff socialbar singleItem"
