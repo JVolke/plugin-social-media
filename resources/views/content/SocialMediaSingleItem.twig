@@ -11,11 +11,8 @@
 {% set pinterestImage = "" %}
 {% if  item.documents[0].data.images.all %}
   {% for image in item.documents[0].data.images.all %}
-  <div class="debug">{{ image | json_encode }}</div>
     {% if image.position == 0 %}
-
       {% set pinterestImage = image.url %}
-      <div class="debug">{{ image.url }}</div>
     {% endif %}
   {% endfor %}
 {% endif %}
