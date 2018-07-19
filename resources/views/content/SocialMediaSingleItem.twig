@@ -1,7 +1,6 @@
 <!-- <link href="{{ plugin_path('SocialMedia') }}/css/shariff.complete.css" rel="stylesheet"> -->
 <link href="{{ plugin_path('SocialMedia') }}/css/SocialStyles.css" rel="stylesheet">
 <script async src="{{ plugin_path('SocialMedia') }}/js/shariff.complete.js"></script>
-
 {% set socialMediaData = config("SocialMedia.social.single.data") | split(', ') %}
 {% set dataServices = "" %}
 {% set socialText = config("SocialMedia.social.single.text") %}
@@ -9,10 +8,15 @@
 {% set socialMediaUrl = config("SocialMedia.social.single.mediaUrl") %}
 {% set socialTheme = config("SocialMedia.social.single.theme") %}
 {% set socialFixed = config("SocialMedia.social.single.fixed") %}
+{% if  item.documents[0].data.images.all %}
+  {% for image in item.documents[0].data.images.all %}
+    {% if image.position == 0 %}
+      {% set pinterestImage = image.url %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 {% set pinterestImage =  item.documents[0].data.images.all[0].url %}
-
 <div class="shariff socialbar singleItem"
-
     {% for i in 0..socialMediaData|length %}
         {% if i != socialMediaData|length %}
             {% if i == 0 %}
@@ -22,7 +26,6 @@
             {% endif %}
         {% endif %}
     {% endfor %}
-
     data-services='[{{ dataServices }}]'
     {% if socialFixed == "true" %}
       data-title='{{ socialText }}'
