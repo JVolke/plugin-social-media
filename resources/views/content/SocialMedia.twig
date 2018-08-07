@@ -1,8 +1,5 @@
-<!--<link href="{{ plugin_path('SocialMedia') }}/css/shariff.complete.css" rel="stylesheet">-->
 {% spaceless %}
-<!-- <link href="{{ plugin_path('SocialMedia') }}/css/SocialStyles.css" rel="stylesheet" media="not" onload="if(media!='all')media='all'"> -->
 <script async src="{{ plugin_path('SocialMedia') }}/js/shariff.complete.js"></script>
-
 {% set socialMediaData = config("SocialMedia.social.data") | split(', ') %}
 {% set dataServices = "" %}
 {% set socialText = config("SocialMedia.social.text") %}
