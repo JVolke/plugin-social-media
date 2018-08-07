@@ -1,5 +1,6 @@
 <!--<link href="{{ plugin_path('SocialMedia') }}/css/shariff.complete.css" rel="stylesheet">-->
-<link href="{{ plugin_path('SocialMedia') }}/css/SocialStyles.css" rel="stylesheet">
+{% spaceless %}
+<!-- <link href="{{ plugin_path('SocialMedia') }}/css/SocialStyles.css" rel="stylesheet" media="not" onload="if(media!='all')media='all'"> -->
 <script async src="{{ plugin_path('SocialMedia') }}/js/shariff.complete.js"></script>
 
 {% set socialMediaData = config("SocialMedia.social.data") | split(', ') %}
@@ -9,9 +10,7 @@
 {% set socialMediaUrl = config("SocialMedia.social.mediaUrl") %}
 {% set socialTheme = config("SocialMedia.social.theme") %}
 {% set socialFixed = config("SocialMedia.social.fixed") %}
-
 <div class="shariff socialbar hidden-sm-down pull-xs-left"
-
     {% for i in 0..socialMediaData|length %}
         {% if i != socialMediaData|length %}
             {% if i == 0 %}
@@ -21,7 +20,6 @@
             {% endif %}
         {% endif %}
     {% endfor %}
-
     data-services='[{{ dataServices }}]'
     {% if socialFixed == "true"  %}
       data-title='{{ socialText }}'
@@ -29,5 +27,5 @@
       data-media-url='{{ socialMediaUrl }}'
     {% endif %}
     data-theme='{{ socialTheme }}'>
-
 </div>
+{% endspaceless %}
