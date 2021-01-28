@@ -31,7 +31,7 @@
     },
     {
       "key"           : "SocialMedia\\Containers\\SocialMediaSingleItemJSContainer",
-      "name"          : "Social Media Buttons for SingleItem",
+      "name"          : "Social Media  JS for Buttons SingleItem",
       "description"   : "Display social media buttons on the item page in the online store.",
       "defaultLayoutContainer": "Ceres::SingleItem.AfterScriptsLoaded"
     }
